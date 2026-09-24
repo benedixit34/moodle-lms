@@ -1,8 +1,18 @@
 import { Router } from "express";
-import { getCoursesController } from "../controllers/course.controller.js";
+
+import {
+  getAllCourses,
+  getSingleCourse,
+  getCourseImage
+} from "../controllers/course.controller";
 
 const router = Router();
 
-router.get("/", getCoursesController);
+router.get("/", getAllCourses);
+router.get("/:courseId", getSingleCourse);
+router.get(
+  "/:courseId/image",
+  getCourseImage
+);
 
 export default router;

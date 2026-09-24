@@ -10,29 +10,14 @@ import {
 
 const router = Router();
 
-router.get(
-  "/courses/:courseId/quizzes",
-  getCourseQuizzes
-);
+router.get("/courses/:courseId/all", getCourseQuizzes);
 
-router.post(
-  "/quizzes/:quizId/attempts",
-  startAttempt
-);
+router.post("/all/:quizId/attempts", startAttempt);
 
-router.get(
-  "/attempts/:attemptId",
-  getAttemptData
-);
+router.get("/attempts/:attemptId", getAttemptData);
 
-router.post(
-  "/attempts/:attemptId/answers",
-  saveAnswers
-);
+router.post("/attempts/:attemptId/answers", saveAnswers);
 
-router.post(
-  "/attempts/:attemptId/finish",
-  finishAttempt
-);
+router.post("/attempts/:attemptId/finish", finishAttempt);
 
 export default router;
